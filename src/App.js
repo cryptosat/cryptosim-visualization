@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Map from './components/Map';
+import Console from './components/Console';
 import ControlBar from './components/ControlBar';
 import CoverageArea from './components/CoverageArea';
 import SatelliteInfoBar from './components/SatelliteInfoBar';
@@ -35,16 +36,21 @@ class App extends React.Component {
     let trajectory = this.state.displayTrajectory ? <Trajectory satellite={sat}/> : null;
     let coverage = this.state.displayCoverage ? <CoverageArea satellite={sat}/> : null;
     return (
-      <div className="App">
-        <ControlBar universe={universe}
-                    setSatellite={this.setSatellite.bind(this)}
-                    setCoverageDisplay={this.setCoverageDisplay.bind(this)}
-                    setTrajectoryDisplay={this.setTrajectoryDisplay.bind(this)}/>
-        <SatelliteInfoBar satellite={sat} gsnetwork={gsnetwork} />
-        <Map universe={universe}>
-          {coverage}
-          {trajectory}
-        </Map>
+      <div className='main split-pane-horizontal'>
+        <div className='left-pane' style={{position: 'fixed', left: 0, top: 0, width: '50%', height: '100%'}}>
+          <ControlBar universe={universe}
+              setSatellite={this.setSatellite.bind(this)}
+              setCoverageDisplay={this.setCoverageDisplay.bind(this)}
+              setTrajectoryDisplay={this.setTrajectoryDisplay.bind(this)}/>
+          <SatelliteInfoBar satellite={sat} gsnetwork={gsnetwork} />
+          <Map universe={universe}>
+            {coverage}
+            {trajectory}
+          </Map>
+        </div>
+        <div className='right-pane' style={{backgroundColor: '#282c34', position: 'fixed', left: '50%', height: '100%', top: 0, overflowY: 'scroll'}}>
+          <Console />
+        </div>
       </div>
     );
   }
