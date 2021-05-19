@@ -55,10 +55,10 @@ class ControlBar extends React.Component {
     return(
       <div className='control-bar'>
         <button onClick={this.play.bind(this)}>
-          <FontAwesomeIcon icon={faPlay} style={{padding: '4px'}}/>
+          <FontAwesomeIcon icon={faPlay} style={{padding: '2px'}}/>
         </button>
         <button onClick={this.pause.bind(this)}>
-          <FontAwesomeIcon icon={faPause} style={{padding: '4px', marginRight: '10px'}}/>
+          <FontAwesomeIcon icon={faPause} style={{padding: '2px', marginRight: '2px'}}/>
         </button>
         <label htmlFor='selectSatellite'>Satellite</label>
         <Select id='selectSatellite' options={satelliteOptions} onChange={this.setSatellite.bind(this)}/>

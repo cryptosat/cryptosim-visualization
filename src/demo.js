@@ -25,7 +25,7 @@ const KE2M_TLE = [
 
 const sat1 = new Satellite(universe, 'crypto1', ISS_TLE[0], ISS_TLE[1]);
 const sat2 = new Satellite(universe, 'crypto2', RBLE_TLE[0], RBLE_TLE[1]);
-const sat3 = new Satellite(universe, 'crypto3', KE2M_TLE[0], KE2M_TLE[1]);
+// const sat3 = new Satellite(universe, 'crypto3', KE2M_TLE[0], KE2M_TLE[1]);
 const gsnetwork = GroundStationNetwork.load(
     universe, require('cryptosim/data/rbcNetwork'));
 
@@ -34,6 +34,9 @@ window.universe = universe;
 window.gsnetwork = gsnetwork;
 window.sat1 = sat1;
 window.sat2 = sat2;
-window.sat3 = sat3;
+// window.sat3 = sat3;
+
+window.KE2M_TLE = KE2M_TLE;
+window.Satellite = Satellite;
 
 export {universe, gsnetwork};

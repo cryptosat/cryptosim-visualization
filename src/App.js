@@ -37,19 +37,23 @@ class App extends React.Component {
     let coverage = this.state.displayCoverage ? <CoverageArea satellite={sat}/> : null;
     return (
       <div className='main split-pane-horizontal'>
-        <div className='left-pane' style={{position: 'fixed', left: 0, top: 0, width: '50%', height: '100%'}}>
-          <ControlBar universe={universe}
-              setSatellite={this.setSatellite.bind(this)}
-              setCoverageDisplay={this.setCoverageDisplay.bind(this)}
-              setTrajectoryDisplay={this.setTrajectoryDisplay.bind(this)}/>
-          <SatelliteInfoBar satellite={sat} gsnetwork={gsnetwork} />
-          <Map universe={universe}>
-            {coverage}
-            {trajectory}
-          </Map>
+        <div className='left-pane' style={{backgroundColor: '#282c34', position: 'fixed', left: 0, top: 0, width: '50%', height: '100%'}}>
+          <h1>Hello, World!</h1>
         </div>
-        <div className='right-pane' style={{backgroundColor: '#282c34', position: 'fixed', left: '50%', height: '100%', top: 0, overflowY: 'scroll'}}>
-          <Console />
+        <div className='right-pane' style={{position: 'fixed', left: '50%', height: '100%', top: 0}}>
+          <div className='top-pane' style={{backgroundColor: '#282c34', overflowY: 'scroll', height: '50%'}}>
+            <Console />
+          </div>
+          <div className='bottom-pane' style={{position: 'fixed', height: '50%', width: '100%'}}>
+            <ControlBar universe={universe}
+                setSatellite={this.setSatellite.bind(this)}
+                setCoverageDisplay={this.setCoverageDisplay.bind(this)}
+                setTrajectoryDisplay={this.setTrajectoryDisplay.bind(this)}/>
+            <Map universe={universe}>
+              {coverage}
+              {trajectory}
+            </Map>
+          </div>
         </div>
       </div>
     );
