@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Map from './components/Map';
-import Console from './components/Console';
+import { Console } from '@cryptosat/jsconsole';
 import ControlBar from './components/ControlBar';
 import CoverageArea from './components/CoverageArea';
 import SatelliteInfoBar from './components/SatelliteInfoBar';
@@ -32,6 +32,9 @@ class App extends React.Component {
   }
 
   render() {
+    const payload = {
+      universe: universe,
+    }
     const sat = universe.satellites().get(this.state.satelliteId);
     let trajectory = this.state.displayTrajectory ? <Trajectory satellite={sat}/> : null;
     let coverage = this.state.displayCoverage ? <CoverageArea satellite={sat}/> : null;
@@ -42,7 +45,7 @@ class App extends React.Component {
         </div>
         <div className='right-pane' style={{position: 'fixed', left: '50%', height: '100%', top: 0}}>
           <div className='top-pane' style={{backgroundColor: '#282c34', overflowY: 'scroll', height: '50%'}}>
-            <Console />
+            <Console payload={payload} />
           </div>
           <div className='bottom-pane' style={{position: 'fixed', height: '50%', width: '100%'}}>
             <ControlBar universe={universe}
