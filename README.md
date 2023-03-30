@@ -24,3 +24,13 @@ where `universe` and `gsnetwork` are `Universe` and `GroundStationNetwork` insta
     yarn start
 
 This will run the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+To deploy the package to npm.js, first create a production build by running
+
+    yarn build
+    yarn deploy
+    
+and then run
+
+	 npm init --scope=@cryptosat
+	 yarn publish
