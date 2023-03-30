@@ -1,6 +1,6 @@
 {
   "name": "@cryptosat/cryptosim-visualization",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "private": false,
   "dependencies": {
     "@cryptosat/cryptosim": "^0.1.6",
@@ -165,5 +165,16 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "description": "This project is a visualization library for the [cryptosim](https://github.com/cryptosat/cryptosim) package written in ReactJS. It contains utilities for displaying on a map the live location of satellites, their trajectories, the locations of ground stations, The areas coveraged by the stations, and more.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cryptosat/cryptosim-visualization.git"
+  },
+  "author": "Yan Michalevsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cryptosat/cryptosim-visualization/issues"
+  },
+  "homepage": "https://github.com/cryptosat/cryptosim-visualization#readme"
 }
