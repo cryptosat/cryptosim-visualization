@@ -16,6 +16,7 @@ class Map extends React.Component {
     zoom: 2,
     minZoom: 1.5,
     center: new GeoCoordinates(0, 0, 0),
+    style: 'dark',
   }
 
   constructor(props) {
@@ -39,7 +40,7 @@ class Map extends React.Component {
 
     this.map.on('load', function () {
       this.map.resize();
-      this.map.addControl(new mapboxgl.NavigationControl());
+//      this.map.addControl(new mapboxgl.NavigationControl());
       this.setupStations();
       this.setupSatellites();
       this.setupStationPopup();
